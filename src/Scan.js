@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Instascan from 'instascan';
+import videoNames from './videoNames';
 
 class Scan extends Component {
     componentDidMount() {
         this.scanner = new Instascan.Scanner({ video: this.video });
-        this.scanner.addListener('scan', (content) => {
-            if (content) {
-                this.props.history.push('/video/' + content);
+        this.scanner.addListener('scan', (key) => {
+            if (key && videoNames[key.toLocaleUpperCase()]) {
+                this.props.history.push(`/video/${key.toLocaleUpperCase()}`);
+            }
+            else {
+                alert(`Dish not found: ${key}`)
             }
         });
         Instascan.Camera.getCameras().then((cameras) => {

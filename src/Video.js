@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import videojs from 'video.js'
+import videoNames from './videoNames';
 
 class Video extends Component {
     componentDidMount() {
         const videoId = decodeURIComponent(this.props.match.params.id);
-        console.log(videoId);
+        const videoUrl = videoNames[videoId];
         const videoOpts = {
             autoplay: true,
             controls: false,
             sources: [{
-                src: `/videos/${ videoId }`,
+                src: videoUrl,
                 type: 'video/mp4'
             }]
         };
