@@ -15,7 +15,7 @@ class Scan extends Component {
         });
         Instascan.Camera.getCameras().then((cameras) => {
             if (cameras.length > 0) {
-                this.scanner.start(cameras[0]);
+                this.scanner.start(cameras[cameras.length - 1]);
             } else {
                 console.error('No cameras found.');
             }
