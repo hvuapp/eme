@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+html, body, main, #root, .container {
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  background: black;
+}
+
+.food-bg {
+  background: url('./bg.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-v {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translate(0, -50%);
+}
+
+.btn {
+  display: block;
+  height: 4rem;
+  line-height: 4rem;
+  min-width: 12rem;
+  text-align: center;
+  padding: 0 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:link, .btn:visited {
+  color: #111;
+}
+
+.btn + .btn {
+  margin-top: 1rem;
+}
+
+.btn.btn-scan {
+  background-color: #EF3E36;
+}
+
+.btn.btn-help {
+  background-color: #FCB040;
+}
+
+.help-list {
+  counter-reset: help;
+  background-color: #FCB040;
+  margin: 0;
+  padding: 1rem 0;
+  min-width: 80vw;
+}
+
+.help-list li {
+  counter-increment: help; 
+  margin: 0;
+  padding: 0;
+  padding-left: 2rem;
+  display: block;
+  min-width: 12rem;
+  font-size: 1.5rem;
+}
+
+.help-list li + li {
+  margin-top: 0.5rem;
+}
+
+.help-list li:before {
+  content: counter(help);
+  display: inline-block;
+  margin-right: 1rem;
+  background: #111;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  color: white;
+  border: 2px solid white;
+  border-radius: 100%;
+}
+
+.btn-back {
+  background-image: url(./icon-back.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+  display: block;
+  text-indent: 999px;
+  overflow: hidden;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.scan-help {
+    font-size: 1rem;
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: -2rem;
+    left: 0;
+}
+
+.scan-video {
+  width: 90vw;
+  height: 90vw;
+  margin: 0 5vw;
+  outline: 4px dashed white;
+}
