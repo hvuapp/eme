@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import Instascan from 'instascan';
 import videoNames from './videoNames';
-
+/* eslint-disable no-undef */
 class Scan extends Component {
     componentDidMount() {
         this.scanner = new Instascan.Scanner({ video: this.video });
@@ -43,5 +42,5 @@ class Scan extends Component {
         }
     }
 }
-
+/* eslint-enable no-undef */
 export default withRouter(Scan);
