@@ -139,3 +139,11 @@ video {
   margin: 0 5vw;
   outline: 4px dashed white;
 }
+
+.dish-video {
+  border: 1px solid #666;
+  width: 100%;
+  width: 100vw;
+  min-height: 50vh;
+  height: auto;
+}

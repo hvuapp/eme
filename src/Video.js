@@ -23,8 +23,8 @@ class Video extends Component {
     render() {
         return (
             <div className="container">
-                <div className="center-v">
-                    <video ref={(vid) => { this.video = vid; }} ></video>
+                <div>
+                    <video className="dish-video" ref={(vid) => { this.video = vid; }} ></video>
                 </div>
                 <Link className="btn-back" to="/">Back</Link>
             </div>
