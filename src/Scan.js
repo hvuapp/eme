@@ -6,8 +6,8 @@ class Scan extends Component {
     componentDidMount() {
         this.scanner = new Instascan.Scanner({ video: this.video });
         this.scanner.addListener('scan', (key) => {
-            if (key && videoNames[key.toLocaleUpperCase()]) {
-                this.props.history.push(`/video/${key.toLocaleUpperCase()}`);
+            if (key && key.length && videoNames[key[0].toLocaleUpperCase()]) {
+                this.props.history.push(`/video/${key[0].toLocaleUpperCase()}`);
             }
             else {
                 alert(`Dish not found: ${key}`)
