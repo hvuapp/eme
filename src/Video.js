@@ -1,31 +1,22 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import videojs from 'video.js'
 import videoNames from './videoNames';
 
 class Video extends Component {
     componentDidMount() {
         const videoId = decodeURIComponent(this.props.match.params.id);
-        const videoUrl = videoNames[videoId];
-        const videoOpts = {
-            autoplay: true,
-            controls: false,
-            sources: [{
-                src: videoUrl,
-                type: 'video/mp4'
-            }]
-        };
-        this.player = videojs(this.video, videoOpts, () => {
-            console.log('onPlayerReady');
-        });
+        const videoUrl = videoNames[videoId.toLocaleUpperCase()];
+        this.videoUrl = videoUrl;
+        this.video.src = videoUrl;
     }
 
     render() {
         return (
             <div className="container">
-                <div>
-                    <video className="dish-video" ref={(vid) => { this.video = vid; }} ></video>
+                <div className="center-v">
+                    <video autoPlay="true" controls className="dish-video" ref={(vid) => { this.video = vid; }} ></video>
                 </div>
+                <span>{this.videoUrl}</span>
                 <Link className="btn-back" to="/">Back</Link>
             </div>
         );
