@@ -1,10 +1,10 @@
-export default {
-    'EME_ GÀ MẸT.mp4': 'videos/EME_ GÀ MẸT.mp4',
-    'EME_ MIẾN TRỘN.mp4': 'videos/EME_ MIẾN TRỘN.mp4',
-    'EME_BÁNH CANH GHẸ.mp4': 'videos/EME_BÁNH CANH GHẸ.mp4',
-    'EME_CHIM QUAY MẮC MẬT.mp4': 'videos/EME_CHIM QUAY MẮC MẬT.mp4',
-    'EME_LẨU HẢI SẢN.mp4': 'videos/EME_LẨU HẢI SẢN.mp4',
-    'EME_TÀO PHỚ.mp4': 'videos/EME_TÀO PHỚ.mp4',
-    'EME_XÔI CÁ RÔ ĐỒNG.mp4': 'EME_XÔI CÁ RÔ ĐỒNG.mp4',
-    'TEST': 'videos/test.mp4'
-};
+export default ({
+    'EME_ GÀ MẸT.MP4': [{src:'videos/ga-met.mp4',type:'video/mp4'},{src:'videos/ga-met.webm',type:'video/webm'}],
+    'EME_ MIẾN TRỘN.MP4': [{src:'videos/mien-tron.mp4',type:'video/mp4'},{src:'videos/mien-tron.webm',type:'video/webm'}],
+    'EME_BÁNH CANH GHẸ.MP4': [{src:'videos/banh-canh-ghe.mp4',type:'video/mp4'},{src:'videos/banh-canh-ghe.webm',type:'video/webm'}],
+    'EME_CHIM QUAY MẮC MẬT.MP4': [{src:'videos/chim-quay-mac-mat.mp4',type:'video/mp4'},{src:'videos/chim-quay-mac-mat.webm',type:'video/webm'}],
+    'EME_LẨU HẢI SẢN.MP4': [{src:'videos/lau-hai-san.mp4',type:'video/mp4'},{src:'videos/lau-hai-san.webm',type:'video/webm'}],
+    'EME_TÀO PHỚ.MP4': [{src:'videos/tao-pho.mp4',type:'video/mp4'},{src:'videos/tao-pho.webm',type:'video/webm'}],
+    'EME_XÔI CÁ RÔ ĐỒNG.MP4': [{src:'videos/xoi-ca-ro-dong.mp4',type:'video/mp4'},{src:'videos/xoi-ca-ro-dong.webm',type:'video/webm'}],
+    'TEST': [{src:'videos/test.mp4',type:'video/mp4'},{src:'videos/test.webm',type:'video/webm'}]
+});

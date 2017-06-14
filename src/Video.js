@@ -3,18 +3,30 @@ import { withRouter, Link } from 'react-router-dom';
 import videoNames from './videoNames';
 
 class Video extends Component {
-    componentDidMount() {
+    componentWillMount() {
         const videoId = decodeURIComponent(this.props.match.params.id);
-        const videoUrl = videoNames[videoId.toLocaleUpperCase()];
-        this.videoUrl = videoUrl;
-        this.video.src = videoUrl;
+        const videos = videoNames;
+        const video = videos[videoId.toLocaleUpperCase()];
+        console.log(video);
+        if (!video) {
+            alert('Video not found: ' + videoId);
+            this.video = [];
+        }
+        else {
+            this.video = video;
+        }
+        
     }
 
     render() {
         return (
             <div className="container">
                 <div className="center-v">
-                    <video autoPlay="true" controls className="dish-video" ref={(vid) => { this.video = vid; }} ></video>
+                    <video autoPlay="true" controls className="dish-video" ref={(vid) => { this.video = vid; }} >
+                        {this.video.map(v=>(
+                            <source key={v.type} src={v.src} type={v.type} />
+                        ))}
+                    </video>
                 </div>
                 <span>{this.videoUrl}</span>
                 <Link className="btn-back" to="/">Back</Link>
